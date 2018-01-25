@@ -1,16 +1,12 @@
 pipeline {
     agent none
-        environment {
-        DISABLE_AUTH = 'true'
-        DB_ENGINE    = 'sqlite'
-    }
     stages {
         /*Continuous Integration STARTED*/
 
                 stage('Cloning GIT Repo') {
                     agent none
                     steps {
-                        echo  ${env.BUILD_NUMBER}
+                        echo  'Cloned Git repo'
                     }
                     post {
                         always {
