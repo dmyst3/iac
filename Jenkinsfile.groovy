@@ -10,7 +10,7 @@ pipeline {
                     }
                     post {
                         always {
-                            echo 'post hello'
+                            echo 'dpost hello'
                         }
                     }
                 }
