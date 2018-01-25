@@ -179,7 +179,7 @@ pipeline {
             }
 
        /*DEPLOYMENTED STARTED*/ 
-        stage('Deployment') {
+        stage('Release to PROD') {
             parallel {
                 stage('Deployment Approval') {
                     agent none
