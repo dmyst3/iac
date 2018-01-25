@@ -171,6 +171,12 @@ pipeline {
                 }
             }
         }
+       /*RELEASE STARTED*/ 
+        stage('Promote Snapshot to Release') {
+                    steps {
+                        echo 'Snapshot has been promoted to Release'
+                    }
+            }
 
        /*DEPLOYMENTED STARTED*/ 
         stage('Deployment') {
@@ -186,17 +192,7 @@ pipeline {
                         }
                     }
                 }
-                stage('Test On Linux') {
-                    agent none
-                    steps {
-                        echo 'post hello'
-                    }
-                    post {
-                        always {
-                            echo 'post hello'
-                        }
-                    }
-                }
+
             }
         }
     }
