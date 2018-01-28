@@ -18,7 +18,7 @@ pipeline {
             }
 
         }
-        stage("Print Defined ENV Vars") {
+        stage("Print Custom Defined ENV Vars") {
             steps {
                 echo "MY_ENVAR1 is: $MY_ENVAR1"
                 echo "MY_ENVAR2 is: $MY_ENVAR2"
