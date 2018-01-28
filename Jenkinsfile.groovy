@@ -4,6 +4,7 @@ pipeline {
     parameters {
         string(defaultValue: 'Hello this is param 1', description: '', name: 'param1')
         string(defaultValue: 'Hello this is param 2', description: '', name: 'param2')
+        booleanParam(defaultValue: true, description: '', name: 'Flag1')
     }
     environment {
         MY_ENVAR1 = "My Env Var1"
@@ -13,8 +14,9 @@ pipeline {
     stages {
         stage("Print Params") {
             steps {
-                echo "flag: ${params.param1}"
-                echo "flag: ${params.param2}"
+                echo "param1: ${params.param1}"
+                echo "param2: ${params.param2}"
+                echo "Flag1: ${params.Flag1}"
             }
 
         }
