@@ -16,6 +16,9 @@ pipeline {
                 echo "flag: ${params.param1}"
                 echo "flag: ${params.param2}"
             }
+            failure {
+                echo "failed"
+            }
         }
         stage("Print Defined ENV Vars") {
             steps {
