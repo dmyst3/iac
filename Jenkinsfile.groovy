@@ -2,15 +2,15 @@ pipeline {
     agent any
 
     parameters {
-        string(defaultValue: 'hello from jenkins param', description: '', name: 'test')
-        string(defaultValue: 'hello from jenkins param1', description: '', name: 'test1')
+        string(defaultValue: 'Hello this is param 1', description: '', name: 'param1')
+        string(defaultValue: 'Hello this is param 2', description: '', name: 'param2')
     }
 
     stages {
         stage("Print Params") {
             steps {
-                echo "flag: ${params.test}"
-                echo "flag: ${params.test1}"
+                echo "flag: ${params.param1}"
+                echo "flag: ${params.param2}"
             }
         }
     }
