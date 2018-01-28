@@ -2,7 +2,10 @@ pipeline {
     agent any
 
     parameters {
-        booleanParam(defaultValue: true, description: 'hello', name: 'userFlag')
+        string(defaultValue: 'Testing param', 
+                     description: '', 
+                     name: 'userFlag'
+                    )
     }
 
     stages {
