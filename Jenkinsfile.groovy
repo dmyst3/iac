@@ -17,11 +17,18 @@ pipeline {
                 echo "flag: ${params.param2}"
             }
         }
-        stage("Print ENV Vars") {
+        stage("Print Defined ENV Vars") {
             steps {
                 echo "MY_ENVAR1 is: $MY_ENVAR1"
                 echo "MY_ENVAR2 is: $MY_ENVAR2"
                 echo "MY_Build_Number is: ${env.BUILD_NUMBER}"
+            }
+        }
+        stage("Print Jenkins ENV Vars") {
+            steps {
+                echo "MY_Build_Number is: ${env.BUILD_NUMBER}"
+                echo "MY_Build_JOB_NAME is: ${env.JOB_NAME}"
+                echo "MY_Build_BUILD_URL is: ${env.BUILD_URL}"
             }
         }
     }
