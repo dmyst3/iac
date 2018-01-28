@@ -21,6 +21,7 @@ pipeline {
             steps {
                 echo "MY_ENVAR1 is: $MY_ENVAR1"
                 echo "MY_ENVAR2 is: $MY_ENVAR2"
+                echo "MY_Build_Number is: ${env.BUILD_NUMBER}"
             }
         }
     }
