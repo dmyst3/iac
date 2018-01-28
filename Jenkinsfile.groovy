@@ -1,6 +1,4 @@
 pipeline {
-    agent any
-
   environment {
     // environment variables and credential retrieval can be interspersed
     SOME_VAR = "SOME VALUE"
@@ -13,11 +11,17 @@ pipeline {
     OTHER_VAR = "${SOME_VAR}"
   }
 
-    stages {
-        stage("Print Vars") {
-            steps {
-                echo "Val1: $SOME_VAR"
-            }
-        }
+  agent any
+
+  stages {
+    stage("print vars") {
+      steps {
+        // environment variables are not masked
+        echo "SOME_VAR is $SOME_VAR"
+        echo "INBETWEEN is $INBETWEEN"
+        echo "OTHER_VAR is $OTHER_VAR"
+
+      }
     }
+  }
 }
