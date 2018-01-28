@@ -33,7 +33,4 @@ pipeline {
             }
         }
     }
-   failure {
-     echo "failed"
-  }
 }
