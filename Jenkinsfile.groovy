@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     parameters {
-        string(defaultValue: true, description: '', name: 'test')
+        string(defaultValue: 'hello from jenkins param', description: '', name: 'test')
     }
 
     stages {
