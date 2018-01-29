@@ -19,7 +19,7 @@ pipeline {
     stages {
             stage("Print Params") {
                 steps {
-                    echo "param1: ${params.param1}"
+                    echo "param1: ${params.param13}"
                     echo "param2: ${params.param2}"
                     echo "Flag1: ${params.Flag1}"
                 }
