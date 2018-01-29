@@ -21,11 +21,26 @@ pipeline {
                 ''' 
             }
         }
-    }
 
-    stages {
+        stage ('Test Code Merge') {
+            steps {
+                sh '''
+                    echo "PATH = ${PATH}"
+                    echo "M2_HOME = ${M2_HOME}"
+                ''' 
+            }
+        }
+
+        stage ('Code Build') {
+            steps {
+                sh '''
+                    echo "PATH = ${PATH}"
+                    echo "M2_HOME = ${M2_HOME}"
+                ''' 
+            }
+        }
         
-        stage ('Clone Git Repow') {
+        stage ('Unit Test') {
             steps {
                 sh '''
                     echo "PATH = ${PATH}"
