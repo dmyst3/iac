@@ -42,7 +42,7 @@ pipeline {
         
         stage('Using When') {
             when {
-                branch 'master' 
+                branch 'master1' 
             }
             steps {
                 echo "MY_ENVAR1 is set to : $MY_ENVAR1"
