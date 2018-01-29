@@ -19,6 +19,10 @@ pipeline {
     }
 
     stages {
+            stage("Clone Git") {
+                steps {
+                    checkout scm 'https://github.com/dmyst3/CI'
+            }
             stage("Print Params") {
                 steps {
                     echo "param1: ${params.param1}"
