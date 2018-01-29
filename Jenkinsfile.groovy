@@ -57,6 +57,16 @@ pipeline {
                     }   
                 }
             }
+               stage('Test On Windows') {
+                    steps {
+                        echo "hello"
+                    }
+                    post {
+                        always {
+                            echo "hello from post"
+                        }
+                    }
+                }
 
     }
 }
