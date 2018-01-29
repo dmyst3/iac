@@ -61,11 +61,15 @@ pipeline {
                     steps {
                         echo "hello"
                     }
+                   sucess{
+                       echo 'sucess'
+                   }
                     post {
                         always {
                             echo "hello from post"
                         }
                     }
+                   
                 }
 
     }
