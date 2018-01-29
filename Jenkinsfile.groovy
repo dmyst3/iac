@@ -42,7 +42,7 @@ pipeline {
         
         stage('Using When') {
             when {
-                env.BUILD_NUMBER 37
+                env.JOB_NAME 'test_pipeline'
             }
             steps {
                 echo "MY_ENVAR1 is set to : $MY_ENVAR1"
