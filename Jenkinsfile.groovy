@@ -22,7 +22,6 @@ pipeline {
                     echo "param1: ${params.param1}"
                     echo "param2: ${params.param2}"
                     echo "Flag1: ${params.Flag1}"
-                    echo9 "bla!"
                 }
             }
             stage("Print Custom Defined ENV Vars") {
