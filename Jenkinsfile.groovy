@@ -25,9 +25,6 @@ pipeline {
                     echo9 "bla!"
                 }
                post {
-                        success {
-                            echo "Job Sucessfuly Passed"
-                        }
                         failure {
                             echo "Job Failed!"
                         }
