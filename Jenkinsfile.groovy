@@ -39,6 +39,7 @@ pipeline {
                 echo "MY_Build_BUILD_URL is: ${env.BUILD_URL}"
             }
         }
+        stage('Parallel Job') {
         parallel  {
         stage("Print Custom Defined ENV Vars1") {
             steps {
@@ -55,7 +56,7 @@ pipeline {
             }
         }   
         }
-
+    }
 
     }
 }
