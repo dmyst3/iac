@@ -42,7 +42,7 @@ pipeline {
         
         stage('Using When') {
             when {
-                env.JOB_NAME 'test_pipeline'
+                branch 'master' 
             }
             steps {
                 echo "MY_ENVAR1 is set to : $MY_ENVAR1"
