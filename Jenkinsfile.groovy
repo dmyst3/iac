@@ -20,6 +20,9 @@ pipeline {
 
     stages {
             stage("Print Params") {
+              agent{ 
+                    label 'master'
+                   }
                 steps {
                     echo "param1: ${params.param1}"
                     echo "param2: ${params.param2}"
