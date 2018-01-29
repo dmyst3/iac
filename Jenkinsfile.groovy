@@ -57,16 +57,16 @@ pipeline {
                     }   
                 }
             }
-               stage('Test On Windows') {
+               stage('Printing Job Result') {
                     steps {
                         echo "hello"
                     }
                     post {
                         success {
-                            echo "hello from post"
+                            echo "Job Sucessfuly Passed"
                         }
                         failure {
-                            echo "Failed! from post"
+                            echo "Job Failed!
                         }
                     }
                    
