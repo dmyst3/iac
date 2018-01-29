@@ -65,6 +65,9 @@ pipeline {
                         success {
                             echo "hello from post"
                         }
+                        failure {
+                            echo "Failed! from post"
+                        }
                     }
                    
                 }
