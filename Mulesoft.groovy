@@ -13,7 +13,19 @@ pipeline {
 
     stages {
         
-        stage ('Initialize') {
+        stage ('Clone Git Repo') {
+            steps {
+                sh '''
+                    echo "PATH = ${PATH}"
+                    echo "M2_HOME = ${M2_HOME}"
+                ''' 
+            }
+        }
+    }
+
+    stages {
+        
+        stage ('Clone Git Repow') {
             steps {
                 sh '''
                     echo "PATH = ${PATH}"
