@@ -61,7 +61,7 @@ pipeline {
                     steps {
                         echo "hello"
                     }
-                   sucess{
+                   success{
                        echo 'sucess'
                    }
                     post {
