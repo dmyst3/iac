@@ -39,6 +39,15 @@ pipeline {
                 echo "MY_Build_BUILD_URL is: ${env.BUILD_URL}"
             }
         }
+        
+        stage('Using When') {
+            when {
+                env.BUILD_NUMBER 37
+            }
+            steps {
+                echo "MY_ENVAR1 is set to : $MY_ENVAR1"
+            }
+        }
 
     }
 }
