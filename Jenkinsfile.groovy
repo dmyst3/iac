@@ -1,4 +1,7 @@
 pipeline {
+    tools{
+        maven 'maven'
+    }
     agent{ 
         label 'master'
     }
@@ -19,6 +22,15 @@ pipeline {
     }
 
     stages {
+        
+        stage ('Initialize') {
+            steps {
+                sh '''
+                    echo "PATH = ${PATH}"
+                    echo "M2_HOME = ${M2_HOME}"
+                ''' 
+            }
+        }
             stage("Print Params") {
                 steps {
                     echo "param1: ${params.param1}"
