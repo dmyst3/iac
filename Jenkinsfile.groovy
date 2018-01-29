@@ -24,12 +24,6 @@ pipeline {
                     echo "Flag1: ${params.Flag1}"
                     echo9 "bla!"
                 }
-               post {
-                        failure {
-                            echo "Job Failed!"
-                        }
-                    }
-
             }
             stage("Print Custom Defined ENV Vars") {
                 steps {
