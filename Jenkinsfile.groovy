@@ -1,5 +1,10 @@
 pipeline {
     agent any
+    
+    options{
+        buildDiscarder(logRotator(numToKeepStr:'5'))
+        timeout(time: 30, unit: 'MINUTES')
+    }
 
     parameters {
         string(defaultValue: 'Hello this is param 1', description: '', name: 'param1')
