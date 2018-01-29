@@ -21,7 +21,7 @@ pipeline {
     stages {
             stage("Print Params") {
               agent{ 
-                    label 'master'
+                    docker { image 'node:7-alpine' }
                    }
                 steps {
                     echo "param1: ${params.param1}"
