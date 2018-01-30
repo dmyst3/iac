@@ -22,6 +22,14 @@ pipeline {
             }
         }
 
+
+        stage('Test Maven') {
+            steps {
+                sh 'mvn -B clean verify'
+            }
+        }
+
+
         stage ('Test Code Merge') {
             steps {
                 sh '''
