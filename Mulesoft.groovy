@@ -27,7 +27,9 @@ pipeline {
                 label 'master'
             }
                 steps {
-                    sh 'ansible --version'
+                    ansiblePlaybook {
+                        playbook: 'cloud_playbooks/create-aws.yml'
+                    }
                 }
         }
         
