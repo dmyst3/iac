@@ -1,7 +1,6 @@
 pipeline {
     tools{
         maven 'maven'
-        ansible 'ansible'
     }
     agent{ 
         label 'master'
@@ -27,9 +26,9 @@ pipeline {
                 label 'master'
             }
                 steps {
-                    ansiblePlaybook {
+                    ansiblePlaybook(
                         playbook: 'play.yml'
-                    }
+                    )
                 }
         }
         
