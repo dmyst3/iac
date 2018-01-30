@@ -12,49 +12,11 @@ pipeline {
     }
 
     stages {
-        
-        stage ('Clone Git Repo') {
-            steps {
-                sh '''
-                    echo "PATH = ${PATH}"
-                    echo "M2_HOME = ${M2_HOME}"
-                ''' 
-            }
-        }
-
-
-        stage('Test Maven') {
+        stage ('Code Build') {
             steps {
                 sh 'mvn -B clean package'
             }
         }
-
-
-        stage ('Test Code Merge') {
-            steps {
-                sh '''
-                    echo "PATH = ${PATH}"
-                    echo "M2_HOME = ${M2_HOME}"
-                ''' 
-            }
-        }
-
-        stage ('Code Build') {
-            steps {
-                sh '''
-                    echo "PATH = ${PATH}"
-                    echo "M2_HOME = ${M2_HOME}"
-                ''' 
-            }
-        }
         
-        stage ('Unit Test') {
-            steps {
-                sh '''
-                    echo "PATH = ${PATH}"
-                    echo "M2_HOME = ${M2_HOME}"
-                ''' 
-            }
-        }
     }
 }
