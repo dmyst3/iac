@@ -20,6 +20,15 @@ pipeline {
                     sh 'mvn -B clean package'
                 }
         }
+
+        stage ('Deploy to dev') {
+            agent{ 
+                label 'master'
+            }
+                steps {
+                    sh 'ansible --version'
+                }
+        }
         
     }
 }
