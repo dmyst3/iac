@@ -26,9 +26,11 @@ pipeline {
                 label 'master'
             }
                 steps {
-                    ansiblePlaybook(
-                        playbook: 'play.yml'
-                    )
+                    script {
+                        ansiblePlaybook(
+                            playbook: 'play.yml'
+                        )
+                    }
                 }
         }
         
