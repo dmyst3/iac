@@ -28,7 +28,7 @@ pipeline {
             }
                 steps {
                     ansiblePlaybook {
-                        playbook: 'cloud_playbooks/create-aws.yml'
+                        playbook: 'play.yml'
                     }
                 }
         }
