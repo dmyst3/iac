@@ -13,9 +13,12 @@ pipeline {
 
     stages {
         stage ('Code Build') {
-            steps {
-                sh 'mvn -B clean package'
+            agent{ 
+                label 'master'
             }
+                steps {
+                    sh 'mvn -B clean package'
+                }
         }
         
     }
