@@ -1,6 +1,7 @@
 pipeline {
     tools{
         maven 'maven'
+        ansible 'ansible'
     }
     agent{ 
         label 'master'
