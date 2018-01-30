@@ -25,7 +25,7 @@ pipeline {
 
         stage('Test Maven') {
             steps {
-                sh 'mvn -B clean verify'
+                sh 'mvn -B clean'
             }
         }
 
