@@ -1,10 +1,5 @@
 pipeline {
-    tools{
-        maven 'maven'
-    }
-    agent{ 
-        label 'master'
-    }
+    agent any
     
     options{
         buildDiscarder(logRotator(numToKeepStr:'5'))
@@ -29,6 +24,11 @@ pipeline {
                     echo "PATH = ${PATH}"
                     echo "M2_HOME = ${M2_HOME}"
                 ''' 
+            }
+        }
+        stage ('Excute another Job') {
+            steps {
+                build job: 'test-free-style'
             }
         }
             stage("Print Params") {
