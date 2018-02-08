@@ -28,7 +28,7 @@ pipeline {
             steps {
                 script {
                     def jobBuild = build job: 'test-free-style', propagate: false
-                    def jobResult = jobBuild.getResult()
+                    def jobResult = jobBuild.getLog()
 
                     echo "Build of 'test-free-style' returned result: ${jobResult}"
                     buildResults['test-free-style'] = jobResult
