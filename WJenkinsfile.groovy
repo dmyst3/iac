@@ -1,4 +1,3 @@
-def buildResults = [:]
 pipeline {
     agent any
     
@@ -26,18 +25,9 @@ pipeline {
         }
         stage ('Excute another Job') {
             steps {
-                script {
-                    def jobBuild = build job: 'test-free-style', propagate: false
-                    def jobResult = jobBuild.getLog()
-
-                    echo "Build of 'test-free-style' returned result: ${jobResult}"
-                    buildResults['test-free-style'] = jobResult
-
-                    if (jobResult != 'SUCCESS') {
-                        error("testJob failed with result: ${jobResult}")
-                    }
-                }
+                build job: 'test-free-style', parameters: [[$class: 'StringParameterValue', name: 'testParam', value: 'hello from jenkins pipeline']]
             }
+
             
         }
             stage("Print Params") {
