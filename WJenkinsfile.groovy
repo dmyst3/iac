@@ -25,7 +25,7 @@ pipeline {
         }
         stage ('Excute another Job') {
             steps {
-                build job: 'test-free-style'
+                build job: 'test-free-style', parameters: [[$class: 'StringParameterValue', name: 'systtestParamemname', value: 'hello from jenkins pipeline']]
             }
         }
             stage("Print Params") {
