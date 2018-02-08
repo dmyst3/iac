@@ -1,3 +1,4 @@
+def buildResults = [:]
 pipeline {
     agent any
     
