@@ -23,6 +23,8 @@ pipeline {
         stage ('Initialize') {
             steps {
                 sh "hostname"
+                sh "php -v"
+                sh "composer -v"
             }
         }
         stage ('Excute another Job') {
@@ -33,6 +35,13 @@ pipeline {
                        if (res.resultIsWorseOrEqualTo("SUCCESS")) {
                            res.rawBuild.getLog(100).each { line -> 
                            echo line
+                           }
+                       }
+                       else (res.resultIsWorseOrEqualTo("FAILURE")) {
+                           res.rawBuild.getLog(100).each { line -> 
+                           echo line
+                           error(line)
+                           currentBuild.result = 'FAILURE'
                            }
                        }
                 }
