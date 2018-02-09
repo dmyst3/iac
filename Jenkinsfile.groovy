@@ -1,5 +1,7 @@
 pipeline {
-    agent any
+    agent {
+        label 'LAMP'
+    }
     
     options{
         buildDiscarder(logRotator(numToKeepStr:'5'))
@@ -20,15 +22,20 @@ pipeline {
         
         stage ('Initialize') {
             steps {
-                sh '''
-                    echo "PATH = ${PATH}"
-                    echo "M2_HOME = ${M2_HOME}"
-                ''' 
+                sh "hostname"
             }
         }
         stage ('Excute another Job') {
             steps {
-                build job: 'test-free-style'
+
+                script{
+                    def res = build job: 'test-free-style', propagate: false, quietPeriod: 0
+                       if (res.resultIsWorseOrEqualTo("SUCCESS")) {
+                           res.rawBuild.getLog(100).each { line -> 
+                           echo line
+                           }
+                       }
+                }
             }
         }
             stage("Print Params") {
